@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::ModuleBuild::XSOrPP;
 BEGIN {
-  $Dist::Zilla::Plugin::ModuleBuild::XSOrPP::VERSION = '0.01';
+  $Dist::Zilla::Plugin::ModuleBuild::XSOrPP::VERSION = '0.02';
 }
 
 use strict;
@@ -48,7 +48,7 @@ Dist::Zilla::Plugin::ModuleBuild::XSOrPP - Add a --pp option to your Build.PL to
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -89,7 +89,7 @@ button on this page: L<http://www.urth.org/~autarch/fs-donation.html>
 
 =head1 AUTHOR
 
-Dave Rolsky <autarch@urth.org>
+  Dave Rolsky <autarch@urth.org>
 
 =head1 COPYRIGHT AND LICENSE
 

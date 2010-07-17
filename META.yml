@@ -19,4 +19,4 @@ requires:
 resources:
   bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-Plugin-ModuleBuild-XSOrPP
   repository: http://hg.urth.org/hg/Dist-Zilla-Plugin-ModuleBuild-XSOrPP
-version: 0.01
+version: 0.02
