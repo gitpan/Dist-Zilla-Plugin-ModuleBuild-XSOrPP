@@ -1,0 +1,48 @@
+{
+   "abstract" : "Add a --pp option to your Build.PL to force an XS-less build",
+   "author" : [
+      "Dave Rolsky <autarch@urth.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.101900, CPAN::Meta::Converter version 2.101670",
+   "license" : [
+      "artistic_2"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Dist-Zilla-Plugin-ModuleBuild-XSOrPP",
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.31"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Dist::Zilla" : "4"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : "0.88",
+            "Test::Most" : 0
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "mailto" : "bug-dist-zilla-plugin-modulebuild-XSOrPP@rt.cpan.org",
+         "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-Plugin-ModuleBuild-XSOrPP"
+      },
+      "repository" : {
+         "type" : "hg",
+         "url" : "http://hg.urth.org/hg/Dist-Zilla-Plugin-ModuleBuild-XSOrPP",
+         "web" : "http://hg.urth.org/hg/Dist-Zilla-Plugin-ModuleBuild-XSOrPP"
+      }
+   },
+   "version" : "0.01"
+}
+

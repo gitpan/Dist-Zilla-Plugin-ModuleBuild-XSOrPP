@@ -1,0 +1,39 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.64.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 e26fb9beaf0da127443124f94845d03a276809d9 Changes
+SHA1 53f615c72ce902229f34ca60ec6c14dea70418c1 INSTALL
+SHA1 23c628b4a8a36738405ccdacaeb912d2e727b4c0 LICENSE
+SHA1 b7d567dfbbe5cbb8f0f2eb3f55b7453063d016d1 MANIFEST
+SHA1 3226cf78b8d4a31ab86132d78eaca1bb7e8e7cf4 META.json
+SHA1 38a7ae879feb9a48319d4cd32eaac038bf703b6b META.yml
+SHA1 355a141ae06c11262d8b01db6cea6bf6e8d103a8 Makefile.PL
+SHA1 859df8829c2b5d668d9694de6177aa5ef7a10478 README
+SHA1 ec4a796c425d293b00cce18ad9479b7b57b1d2df dist.ini
+SHA1 43d40ac89bd5c6938eb744d6ff39e2a3c4226e7d lib/Dist/Zilla/Plugin/ModuleBuild/XSOrPP.pm
+SHA1 746f1d72cd2ddc1c62f39ac07520a536974a2905 t/01-compile.t
+SHA1 a032c41ef6887fab1b900669c2d304fab46680e2 t/release-eol.t
+SHA1 961a1e2c92d836c8cad2d34b784cbc75345dec63 t/release-kwalitee.t
+SHA1 455d1dd1867212a665ad5ea4126b572411de300c t/release-no-tabs.t
+SHA1 9433c240fe590bc404ab68ff63984df763e347ed t/release-pod-coverage.t
+SHA1 b30cbdfaf935017c4568c0c91b242438cb87786e t/release-pod-syntax.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.10 (GNU/Linux)
+
+iEYEARECAAYFAkxBA+wACgkQIgMCsV8qvRI/5ACePKNm1PCblnjCtlAoMJPALan4
+xzUAn0nO5Y1Ie3laKuZJh+GN7yHAo7W+
+=Bni2
+-----END PGP SIGNATURE-----

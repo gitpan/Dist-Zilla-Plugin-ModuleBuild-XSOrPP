@@ -1,0 +1,27 @@
+
+This is the Perl distribution Dist-Zilla-Plugin-ModuleBuild-XSOrPP.
+
+## Installation
+
+Dist-Zilla-Plugin-ModuleBuild-XSOrPP installation is straightforward.
+If your CPAN shell is set up, you should just be able to do
+
+    % cpan Dist::Zilla::Plugin::ModuleBuild::XSOrPP
+
+Download it, unpack it, then build it as per the usual:
+
+    % perl Makefile.PL
+    % make && make test
+
+Then install it:
+
+    % make install
+
+## Documentation
+
+Dist-Zilla-Plugin-ModuleBuild-XSOrPP documentation is available as in POD.
+So you can do:
+
+    % perldoc Dist::Zilla::Plugin::ModuleBuild::XSOrPP
+
+to read the documentation with your favorite pager.
