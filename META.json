@@ -4,7 +4,7 @@
       "Dave Rolsky <autarch@urth.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.101900, CPAN::Meta::Converter version 2.101670",
+   "generated_by" : "Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640",
    "license" : [
       "artistic_2"
    ],
@@ -16,18 +16,22 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.31"
+            "ExtUtils::MakeMaker" : "6.30"
          }
       },
       "runtime" : {
          "requires" : {
-            "Dist::Zilla" : "4"
+            "Dist::Zilla" : "4.0",
+            "Dist::Zilla::Plugin::InlineFiles" : 0,
+            "Dist::Zilla::Plugin::ModuleBuild" : 0,
+            "Moose" : 0,
+            "strict" : 0,
+            "warnings" : 0
          }
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.88",
-            "Test::Most" : 0
+            "Test::More" : "0.88"
          }
       }
    },
@@ -38,11 +42,11 @@
          "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-Plugin-ModuleBuild-XSOrPP"
       },
       "repository" : {
-         "type" : "hg",
-         "url" : "http://hg.urth.org/hg/Dist-Zilla-Plugin-ModuleBuild-XSOrPP",
-         "web" : "http://hg.urth.org/hg/Dist-Zilla-Plugin-ModuleBuild-XSOrPP"
+         "type" : "git",
+         "url" : "git://git.urth.org/Dist-Zilla-Plugin-ModuleBuild-XSOrPP.git",
+         "web" : "http://git.urth.org/Dist-Zilla-Plugin-ModuleBuild-XSOrPP.git"
       }
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }
 

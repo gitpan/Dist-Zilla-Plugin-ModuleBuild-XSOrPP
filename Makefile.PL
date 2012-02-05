@@ -4,30 +4,34 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Add a --pp option to your Build.PL to force an XS-less build',
-  'AUTHOR' => 'Dave Rolsky <autarch@urth.org>',
-  'BUILD_REQUIRES' => {
-    'Test::More' => '0.88',
-    'Test::Most' => '0'
+  "ABSTRACT" => "Add a --pp option to your Build.PL to force an XS-less build",
+  "AUTHOR" => "Dave Rolsky <autarch\@urth.org>",
+  "BUILD_REQUIRES" => {
+    "Test::More" => "0.88"
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'Dist-Zilla-Plugin-ModuleBuild-XSOrPP',
-  'EXE_FILES' => [],
-  'LICENSE' => 'artistic_2',
-  'NAME' => 'Dist::Zilla::Plugin::ModuleBuild::XSOrPP',
-  'PREREQ_PM' => {
-    'Dist::Zilla' => '4'
+  "DISTNAME" => "Dist-Zilla-Plugin-ModuleBuild-XSOrPP",
+  "EXE_FILES" => [],
+  "LICENSE" => "artistic_2",
+  "NAME" => "Dist::Zilla::Plugin::ModuleBuild::XSOrPP",
+  "PREREQ_PM" => {
+    "Dist::Zilla" => "4.0",
+    "Dist::Zilla::Plugin::InlineFiles" => 0,
+    "Dist::Zilla::Plugin::ModuleBuild" => 0,
+    "Moose" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  'VERSION' => '0.02',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.03",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

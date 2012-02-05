@@ -6,12 +6,12 @@ META.json
 META.yml
 Makefile.PL
 README
-SIGNATURE
 dist.ini
 lib/Dist/Zilla/Plugin/ModuleBuild/XSOrPP.pm
 t/01-compile.t
+t/release-cpan-changes.t
 t/release-eol.t
-t/release-kwalitee.t
 t/release-no-tabs.t
-t/release-pod-coverage.t
+t/release-pod-linkcheck.t
+t/release-pod-no404s.t
 t/release-pod-syntax.t
