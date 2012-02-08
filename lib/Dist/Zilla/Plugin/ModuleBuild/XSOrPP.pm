@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::ModuleBuild::XSOrPP;
 {
-  $Dist::Zilla::Plugin::ModuleBuild::XSOrPP::VERSION = '0.03';
+  $Dist::Zilla::Plugin::ModuleBuild::XSOrPP::VERSION = '0.04';
 }
 
 use strict;
@@ -18,94 +18,13 @@ my $skip_xs;
 if ( grep { $_ eq '--pp' } @ARGV ) {
     $skip_xs = 1;
 }
-elsif ( ! can_xs() ) {
+elsif ( ! $build->have_c_compiler() ) {
     $skip_xs = 1;
 }
 
 if ($skip_xs) {
     $build->build_elements(
         [ grep { $_ ne 'xs' } @{ $build->build_elements() } ] );
-}
-
-sub can_xs {
-    # Do we have the configure_requires checker?
-    local $@;
-    eval "require ExtUtils::CBuilder;";
-    if ($@) {
-
-        # They don't obey configure_requires, so it is
-        # someone old and delicate. Try to avoid hurting
-        # them by falling back to an older simpler test.
-        return can_cc();
-    }
-
-    # Do a simple compile that consumes the headers we need
-    my @libs    = ();
-    my $object  = undef;
-    my $builder = ExtUtils::CBuilder->new( quiet => 1 );
-    unless ( $builder->have_compiler ) {
-
-        # Lack of a compiler at all
-        return 0;
-    }
-    eval {
-        $object = $builder->compile(
-            source => 'sanexs.c',
-        );
-        @libs = $builder->link(
-            objects     => $object,
-            module_name => 'sanexs',
-        );
-    };
-    my $broken = !!$@;
-    foreach ( $object, @libs ) {
-        next unless defined $_;
-        1 while unlink $_;
-    }
-
-    if ($broken) {
-        ### NOTE: Don't do this in a production release.
-        # Compiler is officially screwed, you don't deserve
-        # to do any of our downstream depedencies as you'll
-        # probably end up choking on them as well.
-        # Trigger an NA for their own protection.
-        print "Unresolvable broken external dependency.\n";
-        print "This package requires a C compiler with full perl headers.\n";
-        print "Trivial test code using them failed to compile.\n";
-        print STDERR "NA: Unable to build distribution on this platform.\n";
-        exit(0);
-    }
-
-    return 1;
-}
-
-sub can_cc {
-    my @chunks = split( / /, $Config::Config{cc} ) or return;
-
-    # $Config{cc} may contain args; try to find out the program part
-    while (@chunks) {
-        return can_run("@chunks") || ( pop(@chunks), next );
-    }
-
-    return;
-}
-
-sub can_run {
-    my ($cmd) = @_;
-
-    my $_cmd = $cmd;
-    if ( -x $_cmd or $_cmd = MM->maybe_command($_cmd) ) {
-        return $_cmd;
-    }
-
-    foreach my $dir ( ( split /$Config::Config{path_sep}/, $ENV{PATH} ), '.' )
-    {
-        next if $dir eq '';
-        my $abs = File::Spec->catfile( $dir, $cmd );
-        return $abs if ( -x $abs or $abs = MM->maybe_command($abs) );
-    }
-
-    return;
 }
 EOF
 
@@ -139,38 +58,7 @@ Dist::Zilla::Plugin::ModuleBuild::XSOrPP - Add a --pp option to your Build.PL to
 
 =head1 VERSION
 
-version 0.03
-
-=head1 AUTHOR
-
-Dave Rolsky <autarch@urth.org>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is Copyright (c) 2012 by Dave Rolsky.
-
-This is free software, licensed under:
-
-  The Artistic License 2.0 (GPL Compatible)
-
-=cut
-
-
-__DATA__
-___[ sanexs.c ]___
-#include "EXTERN.h"
-#include "perl.h"
-#include "XSUB.h"
-
-int main(int argc, char **argv) {
-    return 0;
-}
-
-int boot_sanexs() {
-    return 1;
-}
-
-__END__
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -217,4 +105,20 @@ on free software full time, which seems unlikely at best.
 To donate, log into PayPal and send money to autarch@urth.org or use the
 button on this page: L<http://www.urth.org/~autarch/fs-donation.html>
 
+=head1 AUTHOR
+
+Dave Rolsky <autarch@urth.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2012 by Dave Rolsky.
+
+This is free software, licensed under:
+
+  The Artistic License 2.0 (GPL Compatible)
+
 =cut
+
+
+__END__
+
